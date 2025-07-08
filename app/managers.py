@@ -37,3 +37,6 @@ class ActorManager:
             f"WHERE id = ?",
             (pk,))
         self._connection.commit()
+
+    def close(self) -> None:
+        self._connection.close()
